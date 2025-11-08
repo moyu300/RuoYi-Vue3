@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <el-form ref="loginRef" :model="loginForm" :rules="loginRules" class="login-form">
-      <h3 class="title">若依后台管理系统</h3>
+      <h3 class="title">中州养老</h3>
       <el-form-item prop="username">
         <el-input
           v-model="loginForm.username"
@@ -66,9 +66,9 @@
 
 <script setup>
 import { getCodeImg } from "@/api/login";
+import useUserStore from '@/store/modules/user';
+import { decrypt, encrypt } from "@/utils/jsencrypt";
 import Cookies from "js-cookie";
-import { encrypt, decrypt } from "@/utils/jsencrypt";
-import useUserStore from '@/store/modules/user'
 
 const userStore = useUserStore()
 const route = useRoute();
@@ -168,7 +168,7 @@ getCookie();
   justify-content: center;
   align-items: center;
   height: 100%;
-  background-image: url("../assets/images/login-background.jpg");
+  background-image: url("../assets/images/background-login.jpg");
   background-size: cover;
 }
 .title {
