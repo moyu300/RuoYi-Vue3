@@ -1,5 +1,13 @@
 import request from '@/utils/request'
 
+//查询所有护理项目
+export function getProjectAll() {
+  return request({
+    url: '/serve/project/all',
+    method: 'get'
+  })
+}
+
 // 查询护理项目列表
 export function listProject(query) {
   return request({
