@@ -35,6 +35,15 @@ export function updateLevel(data) {
   })
 }
 
+// 修改护理等级状态
+export function levelStatus(data) {
+  return request({
+    url: '/serve/level',
+    method: 'put',
+    data: data
+  })
+}
+
 // 删除护理等级
 export function delLevel(id) {
   return request({

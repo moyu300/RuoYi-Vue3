@@ -1,5 +1,13 @@
 import request from '@/utils/request'
 
+//查询所有护理计划
+export function getPlanAll() {
+  return request({
+    url: '/serve/plan/all',
+    method: 'get'
+  })
+}
+
 // 查询护理计划列表
 export function listNursingPlan(query) {
   return request({

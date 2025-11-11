@@ -177,17 +177,7 @@ const title = ref("")
 
 //引用数据字典
 const { nursing_project_status } = proxy.useDict("nursing_project_status");
-// //下拉选择框的选择项
-// const options = ref([
-//   {
-//     value: 1,
-//     label: "启用"
-//   },
-//   {
-//     value: 0,
-//     label: "停用"
-//   }
-// ])
+
 //禁用或启用
 const handleEnable = (row) => {
   //获取状态
@@ -301,6 +291,8 @@ function handleUpdate(row) {
   reset()
   const _id = row.id || ids.value
   getProject(_id).then(response => {
+    // console.log('后端返回的数据:', response.data)
+    // console.log('当前字典数据:', nursing_project_status.value)
     form.value = response.data
     form.value.status = String(form.value.status)
     open.value = true

@@ -44,11 +44,7 @@
       </el-col>
     </el-row>
 
-    <el-table
-      v-loading="loading"
-      :data="planList"
-      @selection-change="handleSelectionChange"
-    >
+    <el-table v-loading="loading" :data="planList" @selection-change="handleSelectionChange">
       <el-table-column label="序号" type="index" width="50" />
       <el-table-column label="名称" align="center" prop="planName" />
       <el-table-column label="状态" align="center" prop="status">
@@ -58,12 +54,7 @@
           </el-tag>
         </template>
       </el-table-column>
-      <el-table-column
-        label="创建时间"
-        align="center"
-        prop="createTime"
-        width="180"
-      >
+      <el-table-column label="创建时间" align="center" prop="createTime" width="180">
         <template #default="scope">
           <span>{{
             parseTime(scope.row.createTime, '{y}-{m}-{d} {h}:{i}:{s}')
@@ -320,9 +311,9 @@ const rules = ref({
 });
 
 const executeCycleOptions = ref([
-  { label: '天', value: '0' },
-  { label: '周', value: '1' },
-  { label: '月', value: '2' },
+  { label: '天', value: 0 },
+  { label: '周', value: 1 },
+  { label: '月', value: 2 },
 ]);
 
 onMounted(() => {
