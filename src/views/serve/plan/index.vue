@@ -436,7 +436,7 @@ function submitForm() {
     return;
   }
   formData.value['projectPlans'] = nursingPalnList.value;
-  console.log(formData.value);
+  // console.log(formData.value);
 
   proxy.$refs['planRef'].validate((valid) => {
     if (valid) {

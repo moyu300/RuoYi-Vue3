@@ -195,8 +195,8 @@ function getList() {
   loading.value = true
   listLevel(queryParams.value).then(response => {
     levelList.value = response.rows
-    console.log("response ", response)
-    console.log("levelList.value  ", levelList.value )
+    // console.log("response ", response)
+    // console.log("levelList.value  ", levelList.value )
     total.value = response.total
     loading.value = false
   })
